@@ -1,11 +1,7 @@
 - name: Download delle ROM
       run: |
         mkdir -p workspace/base workspace/port
-        
         echo "Scarico la BASE (Evolution X)..."
-        curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -o workspace/base/base.zip "https://cdn.evolution-x.org/a71/16/EvolutionX-16.0-20260325-a71-11.6.2-Official.zip"
-        
+        curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o workspace/base/base.zip "https://cdn.evolution-x.org/a71/16/EvolutionX-16.0-20260325-a71-11.6.2-Official.zip"
         echo "Scarico il PORT (AxionAOSP)..."
-        curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -o workspace/port/port.zip "https://cdn.axionos.org/raphael/axion-2.5-REVERIE-20260407225317-OFFICIAL-GMS-raphael.zip"
+        curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o workspace/port/port.zip "https://cdn.axionos.org/raphael/axion-2.5-REVERIE-20260407225317-OFFICIAL-GMS-raphael.zip"
