@@ -1,7 +1,33 @@
-- name: Download delle ROM
+name: Cucina AxionAOSP per Galaxy A71
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-rom:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+
+    - name: Installazione Dipendenze
+      run: |
+        sudo apt update
+        sudo apt install -y axel bzip2 aria2 brotli p7zip-full openjdk-17-jre python3 python3-pip
+
+    - name: Download delle ROM
       run: |
         mkdir -p workspace/base workspace/port
         echo "Scarico la BASE (Evolution X)..."
         curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o workspace/base/base.zip "https://cdn.evolution-x.org/a71/16/EvolutionX-16.0-20260325-a71-11.6.2-Official.zip"
         echo "Scarico il PORT (AxionAOSP)..."
         curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -o workspace/port/port.zip "https://cdn.axionos.org/raphael/axion-2.5-REVERIE-20260407225317-OFFICIAL-GMS-raphael.zip"
+
+    - name: Verifica Download
+      run: |
+        ls -lh workspace/base/
+        ls -lh workspace/port/
+        echo "I file sono pronti per essere spacchettati!"
