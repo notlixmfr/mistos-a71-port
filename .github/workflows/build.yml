@@ -1,6 +1,8 @@
 name: Cucina ROM per Galaxy A71
 
 on:
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
